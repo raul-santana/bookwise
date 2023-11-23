@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Nunito } from 'next/font/google'
 import './globals.css'
-import { getCssText } from '@/styles/stitches.config'
+import { getCssText } from '../../stitches.config'
 
 const nunito = Nunito({ subsets: ['latin'] })
 
