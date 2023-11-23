@@ -1,11 +1,4 @@
-import Image from 'next/image'
-import {
-  Container,
-  ImageArea,
-  LoginArea,
-  LoginButton,
-  LoginTypes,
-} from './styles'
+import { Container, ImageArea, LoginArea, LoginTypes } from './styles'
 import { AuthButtons } from '@/components/AuthButtons'
 
 function LoginPage() {

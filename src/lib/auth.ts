@@ -1,5 +1,6 @@
 import { PrismaAdapter } from '@auth/prisma-adapter'
-import GoogleProvider from 'next-auth/providers/google'
+import GoogleProvider, { GoogleProfile } from 'next-auth/providers/google'
+import GithubProvider, { GithubProfile } from 'next-auth/providers/github'
 import { AuthOptions } from 'next-auth'
 import { prismaClient } from './prisma'
 
@@ -9,6 +10,26 @@ export const authOptions: AuthOptions = {
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+      profile(profile: GoogleProfile) {
+        return {
+          id: profile.sub,
+          name: profile.name,
+          email: profile.email,
+          image: profile.picture,
+        }
+      },
+    }),
+    GithubProvider({
+      clientId: process.env.GITHUB_ID!,
+      clientSecret: process.env.GITHUB_SECRET!,
+      profile(profile: GithubProfile) {
+        return {
+          id: String(profile.id),
+          name: profile.name!,
+          email: profile.email!,
+          image: profile.avatar_url,
+        }
+      },
     }),
   ],
   callbacks: {
