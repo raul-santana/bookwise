@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Nunito } from 'next/font/google'
 import './globals.css'
 import { getCssText } from '../../stitches.config'
+import { AuthProvider } from '@/providers/auth'
 
 const nunito = Nunito({ subsets: ['latin'] })
 
@@ -24,7 +25,11 @@ export default function RootLayout({
         />
         <title>BookWise</title>
       </head>
-      <body className={nunito.className}>{children}</body>
+      <body className={nunito.className}>
+        <AuthProvider>
+          {children}
+        </AuthProvider>
+      </body>
     </html>
   )
 }
