@@ -1,25 +1,49 @@
+import Link from 'next/link'
 import { styled } from '../../../../stitches.config'
 
 export const SidebarContainer = styled('aside', {
-  height: '100vh',
-  maxWidth: '14.5rem',
-
-  padding: '1rem',
-
-  backgroundColor: 'blue',
-})
-
-export const SidebarCover = styled('div', {
-  height: '100%',
-  width: '100%',
-
-  padding: '2.75rem 3.25rem ',
-
-  background: "$gray700 url('/sidebar-bg.png') no-repeat top",
+  width: '232px',
+  height: 'calc(100% - 40px)',
+  margin: 20,
+  background: "$gray700 url('/images/sidebar-bg.png') no-repeat center",
   backgroundSize: 'cover',
   borderRadius: 12,
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'space-between',
+  paddingTop: 40,
+  paddingBottom: 24,
+})
+
+export const LoginButton = styled(Link, {
+  textDecoration: 'none',
+  color: '$gray200',
+  fontWeight: 700,
+  fontSize: '$md',
+  display: 'flex',
+  alignItems: 'center',
+  gap: '$3',
+
+  svg: {
+    color: '$green100',
+  },
+})
+
+export const UserDetails = styled('div', {
+  display: 'flex',
+  alignItems: 'center',
+  gap: '$3',
+
+  svg: {
+    cursor: 'pointer',
+    color: '#F75A68',
+  },
+
+  p: {
+    maxWidth: 100,
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+  },
 })
