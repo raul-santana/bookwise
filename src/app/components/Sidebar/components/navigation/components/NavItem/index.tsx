@@ -1,4 +1,3 @@
-import { StringifyOptions } from 'querystring'
 import { NavItemContainer } from './styles'
 import { ReactNode } from 'react'
 import { usePathname } from 'next/navigation'
@@ -12,8 +11,10 @@ interface NavItemProps {
 const NavItem = ({ url, icon, text }: NavItemProps) => {
   const pathname = usePathname()
 
+  const currentRouter = pathname !== '/' ? '/' + pathname.split('/')[1] : '/'
+
   return (
-    <NavItemContainer href={url} active={pathname === url && true}>
+    <NavItemContainer href={url} active={currentRouter === url}>
       {icon}
       <span>{text}</span>
     </NavItemContainer>
