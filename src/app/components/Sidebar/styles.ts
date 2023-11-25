@@ -1,6 +1,6 @@
 import { styled } from '../../../../stitches.config'
 
-export const MenuContainer = styled('aside', {
+export const SidebarContainer = styled('aside', {
   height: '100vh',
   maxWidth: '14.5rem',
 
@@ -9,7 +9,7 @@ export const MenuContainer = styled('aside', {
   backgroundColor: 'blue',
 })
 
-export const MenuCover = styled('div', {
+export const SidebarCover = styled('div', {
   height: '100%',
   width: '100%',
 

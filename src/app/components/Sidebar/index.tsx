@@ -1,11 +1,11 @@
 import Image from 'next/image'
-import { MenuContainer, MenuCover } from './styles'
+import { SidebarContainer, SidebarCover } from './styles'
 import Navigation from './components/navigation'
 
-const Menu = () => {
+const Sidebar = () => {
   return (
-    <MenuContainer>
-      <MenuCover>
+    <SidebarContainer>
+      <SidebarCover>
         <div>
           <Image
             src={'/logo.png'}
@@ -19,9 +19,9 @@ const Menu = () => {
         </div>
 
         <footer>Fazer login</footer>
-      </MenuCover>
-    </MenuContainer>
+      </SidebarCover>
+    </SidebarContainer>
   )
 }
 
-export default Menu
+export default Sidebar

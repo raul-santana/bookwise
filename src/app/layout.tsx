@@ -4,7 +4,7 @@ import './globals.css'
 import { getCssText } from '../../stitches.config'
 import { AuthProvider } from '@/providers/auth'
 import { HomeContainer } from './styles'
-import Menu from './components/menu/index'
+import Sidebar from './components/Sidebar/index'
 
 const nunito = Nunito({ subsets: ['latin'] })
 
@@ -30,7 +30,7 @@ export default function RootLayout({
       <body className={nunito.className}>
         <AuthProvider>
           <HomeContainer>
-            <Menu />
+            <Sidebar />
             {children}
           </HomeContainer>
         </AuthProvider>
