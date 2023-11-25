@@ -28,6 +28,8 @@ export const Container = styled('div', {
 })
 
 export const AvatarImage = styled(Image, {
+  cursor: 'pointer',
+
   borderRadius: '$full',
   objectFit: 'cover',
   width: '100%',
