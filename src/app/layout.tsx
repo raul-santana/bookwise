@@ -3,6 +3,8 @@ import { Nunito } from 'next/font/google'
 import './globals.css'
 import { getCssText } from '../../stitches.config'
 import { AuthProvider } from '@/providers/auth'
+import { HomeContainer } from './styles'
+import Menu from './components/menu/index'
 
 const nunito = Nunito({ subsets: ['latin'] })
 
@@ -27,7 +29,10 @@ export default function RootLayout({
       </head>
       <body className={nunito.className}>
         <AuthProvider>
-          {children}
+          <HomeContainer>
+            <Menu />
+            {children}
+          </HomeContainer>
         </AuthProvider>
       </body>
     </html>
