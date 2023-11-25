@@ -7,24 +7,13 @@ import { Nav } from './styles'
 const Navigation = () => {
   return (
     <Nav>
-      <NavItem
-        url={'/'}
-        active={true}
-        icon={<ChartLineUp size={24} />}
-        text="Início"
-      />
+      <NavItem url={'/'} icon={<ChartLineUp size={24} />} text="Início" />
       <NavItem
         url={'/explore'}
-        active={false}
         icon={<Binoculars size={24} />}
         text="Explorar"
       />
-      <NavItem
-        url={'/profile'}
-        active={false}
-        icon={<User size={24} />}
-        text="Perfil"
-      />
+      <NavItem url={'/profile'} icon={<User size={24} />} text="Perfil" />
     </Nav>
   )
 }
