@@ -42,10 +42,10 @@ export default async function Home() {
                 <header>
                   <InfoProfile>
                     {/* {raiting.user.image && (
-                      // <Avatar
-                      //   src={raiting.user.image ? raiting.user.image : ''}
-                      //   alt="user image"
-                      // />
+                      <Avatar
+                        src={raiting.user.image ? raiting.user.image : ''}
+                        alt="user image"
+                      />
                     )} */}
                     <div>
                       <p>{raiting.user.name}</p>
@@ -58,7 +58,7 @@ export default async function Home() {
                 </header>
 
                 <InfoBookContainer>
-                  {/* <Image
+                  <Image
                     width={108}
                     height={152}
                     alt="book"
@@ -68,7 +68,7 @@ export default async function Home() {
                       width: 'auto',
                       maxWidth: '6.75rem',
                     }}
-                  /> */}
+                  />
                   <BookInfo>
                     <header>
                       <b>{raiting.book.name}</b>
@@ -87,46 +87,6 @@ export default async function Home() {
                 </InfoBookContainer>
               </CardRating>
             ))}
-
-            <CardRating>
-              <header>
-                <InfoProfile>
-                  {/* <Avatar /> */}
-                  <div>
-                    <p>Jaxson Dias</p>
-                    <span>Hoje</span>
-                  </div>
-                </InfoProfile>
-                <div>
-                  <StarRating />
-                </div>
-              </header>
-
-              <InfoBookContainer>
-                <Image
-                  width={108}
-                  height={152}
-                  alt="book"
-                  src={'/o-hobbit.png'}
-                  style={{ height: 'auto', width: 'auto', maxWidth: '6.75rem' }}
-                />
-                <BookInfo>
-                  <header>
-                    <b>O Hobbit</b>
-                    <span>J.R.R Tolkien</span>
-                  </header>
-                  <div>
-                    <p>
-                      Semper et sapien proin vitae nisi. Feugiat neque integer
-                      donec et aenean posuere amet ultrices. Cras fermentum id
-                      pulvinar varius leo a in. Amet libero pharetra nunc
-                      elementum fringilla velit ipsum. Sed vulputate massa velit
-                      nibh...
-                    </p>
-                  </div>
-                </BookInfo>
-              </InfoBookContainer>
-            </CardRating>
           </LatestRatings>
         </RecentAvaliationsContainer>
         <PopularBooksContainer></PopularBooksContainer>
