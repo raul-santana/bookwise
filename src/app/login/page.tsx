@@ -1,5 +1,5 @@
 import { Container, ImageArea, LoginArea, LoginTypes } from './styles'
-import { AuthButtons } from '@/components/AuthButtons'
+import { AuthButtons } from '@/components/AuthButtons/AuthButtons'
 
 function LoginPage() {
   return (

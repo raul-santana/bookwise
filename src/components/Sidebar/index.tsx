@@ -8,8 +8,6 @@ import { SignIn, SignOut } from '@phosphor-icons/react'
 import { signOut, useSession } from 'next-auth/react'
 import { Avatar } from '../Avatar'
 import { useRouter } from 'next/navigation'
-import { getServerSession } from 'next-auth'
-import { authOptions } from '@/lib/auth'
 
 const Sidebar = () => {
   const { data, status } = useSession()
@@ -24,7 +22,7 @@ const Sidebar = () => {
     <SidebarContainer>
       <div>
         <Image
-          src={'/logo.png'}
+          src={'/images/logo.png'}
           alt="Logo BookWise"
           height={32}
           width={128}

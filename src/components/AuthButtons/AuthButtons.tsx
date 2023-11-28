@@ -30,7 +30,7 @@ export const AuthButtons = ({
     <Container>
       <AuthButton onClick={() => handleSignIn('google')}>
         <Image
-          src={'/google-icon.svg'}
+          src={'/images/google-icon.svg'}
           alt="Logo google"
           height={20}
           width={20}
@@ -41,7 +41,7 @@ export const AuthButtons = ({
       </AuthButton>
       <AuthButton onClick={() => handleSignIn('github')}>
         <Image
-          src={'/github-icon.svg'}
+          src={'/images/github-icon.svg'}
           alt="Logo github"
           height={20}
           width={20}
@@ -53,7 +53,7 @@ export const AuthButtons = ({
       {canGuest && (
         <AuthButton onClick={() => handleSignIn()}>
           <Image
-            src={'/rocket-icon.svg'}
+            src={'/images/rocket-icon.svg'}
             alt="Logo google"
             height={20}
             width={20}
