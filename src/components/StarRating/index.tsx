@@ -3,9 +3,13 @@
 import { Star } from '@phosphor-icons/react'
 import { StarRatingContainer } from './styles'
 
-export default function StarRating() {
+interface StarRatingProps {
+  percent: number
+}
+
+export default function StarRating({ percent }: StarRatingProps) {
   /*
-    Passo 1 - Pegar o total de avaliações e multiplicar por 5
+    Passo 1 - Pegar o quantidade de avaliações e multiplicar por 5
 
     Passo 2 - somar todas as avaliações
 
@@ -16,11 +20,11 @@ export default function StarRating() {
 
   return (
     <StarRatingContainer>
-      <Star size={16} weight={'fill'} />
-      <Star size={16} weight={'fill'} />
-      <Star size={16} weight={'regular'} />
-      <Star size={16} />
-      <Star size={16} />
+      <Star size={16} weight={percent >= 20 ? 'fill' : 'regular'} />
+      <Star size={16} weight={percent >= 40 ? 'fill' : 'regular'} />
+      <Star size={16} weight={percent >= 60 ? 'fill' : 'regular'} />
+      <Star size={16} weight={percent >= 80 ? 'fill' : 'regular'} />
+      <Star size={16} weight={percent === 100 ? 'fill' : 'regular'} />
     </StarRatingContainer>
   )
 }

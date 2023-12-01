@@ -1,3 +1,4 @@
+'use client'
 import { ComponentProps } from '@stitches/react'
 import { AvatarImage, Container } from './styles'
 
