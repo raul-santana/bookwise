@@ -1,7 +1,7 @@
-import { format, isToday, isYesterday } from 'date-fns'
+import { format, formatDistanceToNow, isToday, isYesterday } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 
-export function getFormattedDate(date: Date) {
+export function getDateWithTodayOrYesterday(date: Date) {
   if (isToday(date)) {
     return 'Hoje'
   }
@@ -10,4 +10,8 @@ export function getFormattedDate(date: Date) {
   } else {
     return format(date, "dd'/'MM'/'yyyy", { locale: ptBR })
   }
+}
+
+export function dateRelativeToNow(date: Date) {
+  return formatDistanceToNow(date, { locale: ptBR, addSuffix: true })
 }

@@ -3,7 +3,6 @@
 import Image from 'next/image'
 import { LoginButton, SidebarContainer, UserDetails } from './styles'
 import Navigation from './components/navigation'
-import Link from 'next/link'
 import { SignIn, SignOut } from '@phosphor-icons/react'
 import { signOut, useSession } from 'next-auth/react'
 import { Avatar } from '../Avatar'

@@ -8,7 +8,7 @@ import {
   InfoBookContainer,
   InfoProfile,
 } from './styles'
-import { getFormattedDate } from '@/utils/get-formatted-date'
+import { getDateWithTodayOrYesterday } from '@/utils/get-formatted-date'
 import { prismaClient } from '@/lib/prisma'
 
 interface CardRatingProps {
@@ -44,14 +44,18 @@ async function CardRating({ rating }: CardRatingProps) {
     },
   })
 
-  const ratingDate = getFormattedDate(rating.created_at)
+  const ratingDate = getDateWithTodayOrYesterday(rating.created_at)
 
-  const quantityRatings = infoRatings.length
-  const totalRatings = infoRatings.reduce((acc, rating) => {
-    return acc + rating.rate
-  }, 0)
+  const ratings = infoRatings.reduce((acc: number[], currentValue) => {
+    return acc.concat(currentValue.rate)
+  }, [])
 
-  const percentRating = (totalRatings / (quantityRatings * 5)) * 100
+  // const quantityRatings = infoRatings.length
+  // const totalRatings = infoRatings.reduce((acc, rating) => {
+  //   return acc + rating.rate
+  // }, 0)
+
+  // const percentRating = (totalRatings / (quantityRatings * 5)) * 100
 
   return (
     <CardRatingContainer key={rating.id}>
@@ -69,7 +73,7 @@ async function CardRating({ rating }: CardRatingProps) {
           </div>
         </InfoProfile>
         <div>
-          <StarRating percent={percentRating} />
+          <StarRating ratings={ratings} />
         </div>
       </header>
 
